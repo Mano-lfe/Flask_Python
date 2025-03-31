@@ -1,24 +1,18 @@
+
+    
 from flask import Flask
 from flask import render_template
-from flask import json                                                                                                                                     
-app = Flask(__name__)                                                                                                                  
+from flask import json
 
+app = Flask(__name__)
 
 @app.route('/<int:valeur>')
 def exercice(valeur):
     etoiles = ''
-    for j in range(valeur):
-        for i in range(valeur):
-            etoiles += '*' * j + 1 
-            etoiles += '<br>'
-        for i in range(j+1):
-            etoiles += '*'
-        etoiles += '<br>'
-        for i in range(j+1):
-            etoiles += '*'
-        etoiles += '<br>'
+    for j in range(1, valeur + 1):
+        etoiles += ' ' * (valeur - j) + '*' * j + '<br>'
     return etoiles
 
-
 if __name__ == "__main__":
-  app.run(debug=True)
+    app.run(debug=True)
+
