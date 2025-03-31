@@ -8,7 +8,7 @@ app = Flask(__name__)
 def exercice(valeur):
     etoiles = ''
     for j in range(valeur):
-        for i in range(valeur):
+        for i in range(valeur+1):
             etoiles += '*' * i + 
         etoiles += '<br>'
     return etoiles
