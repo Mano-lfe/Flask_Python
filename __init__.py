@@ -8,8 +8,8 @@ app = Flask(__name__)
 def exercice(valeur):
     etoiles = ''
     for i in range(valeur):
-        etoiles += '*'
-    return etoiles #Comm
+        etoiles += '/*'
+    return etoiles #comm
 
 
 if __name__ == "__main__":
