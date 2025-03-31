@@ -10,6 +10,12 @@ def exercice(valeur):
     for i in range(valeur):
         etoiles += '*'
     return etoiles #comm
+        etoiles = ''
+    for j in range(valeur):
+        for i in range(valeur):
+            etoiles += '*'
+        etoiles += '<br>'
+    return etoiles
 
 
 if __name__ == "__main__":
