@@ -12,6 +12,20 @@ def exercice(valeur):
             etoiles += '*' * j + 1 
             etoiles += '<br>'
     return etoiles
+etoiles = ''
+    for j in range(valeur):
+        for i in range(j+1):
+            etoiles += '*'
+        etoiles += '<br>'
+    return etoiles
+
+etoiles = ''
+    for j in range(valeur):
+        for i in range(j+1):
+            etoiles += '*'
+        etoiles += '<br>'
+    return etoiles
+
 
 if __name__ == "__main__":
   app.run(debug=True)
