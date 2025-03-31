@@ -12,13 +12,5 @@ def exercice(valeur):
         etoiles += '</br>'
     return etoiles #comm
 
-etoiles = ''
-    for j in range(valeur):
-        for i in range(valeur):
-            etoiles += ('*' * valeur)
-        etoiles += '<br>'
-    return etoiles
-
-
 if __name__ == "__main__":
   app.run(debug=True)
