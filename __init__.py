@@ -10,7 +10,7 @@ def exercice(valeur):
     for j in range(valeur):
         for i in range(1, valeur + 1):
             espaces = '' * (valeur - i)
-            etoiles += espaces + '*' * i +
+            etoiles += espaces + '*' * i -
         etoiles += '<br>'
     return etoiles
 
