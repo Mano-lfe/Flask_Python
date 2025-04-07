@@ -1,31 +1,22 @@
-from flask import Flask, request
+from flask import Flask
+from flask import render_template
+from flask import json                                                                                                                                     
+app = Flask(_name_)
 
-app = Flask(name)
+@app.route('/<int:valeur>')
+def exercice(valeur):
+    a, b = 0, 1
+    count = [str(0)] 
 
-@app.route('/')
-def formulaire():
-    return '''
-    <form action="/suite" method="get">
-        Entrez un nombre : <input type="number" name="valeur" min="2" required>
-        <input type="submit" value="Générer">
-    </form>
-    '''
+    if valeur > 1:
+        count.append(str(b))
 
-@app.route('/suite')
-def calcul_suite():
-    try:
-        n = int(request.args.get('valeur', 2))
-    except ValueError:
-        return "Veuillez entrer un nombre valide", 400
+    for _ in range(2, valeur):
+        c = a + b
+        count.append(str(c))
+        a, b = b, c
 
-    if n < 2:
-        return "Le nombre doit être au moins 2", 400
+    return ', '.join(count)  
 
-    suite = [0, 1]
-    for i in range(2, n):
-        suite.append(suite[-1] + suite[-2])
-
-    return f"Suite pour n={n} : {', '.join(map(str, suite))}"
-
-if name == 'main':
-    app.run(host='0.0.0.0', port=5000, debug=True
+if _name_ == "_main_":
+    app.run(debug=True)
