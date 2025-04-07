@@ -3,7 +3,7 @@ from flask import render_template
 from flask import json
 
 
-app = Flask(name)
+app = Flask(__name__)
 
 @app.route('/<int:valeur>')
 def exercice(valeur):
@@ -15,8 +15,8 @@ def exercice(valeur):
             if somme + i > 5000:
                 break
             somme += i
-
+    
     return f'<pre>Somme finale: {somme}</pre>'
 
-if name == "main":
+if __name__ == "__main__":
     app.run(debug=True)
