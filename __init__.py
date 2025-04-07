@@ -3,23 +3,19 @@ app = Flask(__name__)
 
 @app.route('/<int:valeur>')
 def exercice(valeur):
-    resultat = ''
-    for i in range(1, valeur + 1):
-        # Espaces pour centrer
-        resultat += '&nbsp;' * (valeur - i)
-        
-        # Nombres croissants
-        for j in range(1, i + 1):
-            resultat += str(j)
-        
-        # Nombres décroissants
-        for j in range(i - 1, 0, -1):
-            resultat += str(j)
-
-        # Saut de ligne HTML
-        resultat += '<br>'
+   etoiles = ''
     
-    return resultat
+    for i in range(1, valeur + 1):
+        
+      etoiles += '' * (valeur - i)
+        for j in range(1, i + 1):
+           etoiles += str(j)
+        for j in range(i - 1, 0, -1):
+            etoiles += str(j)
+        etoiles += '<br>'
+    
+   etoiles += '</div>'
+    return etoiles
 
 if __name__ == "__main__":
     app.run(debug=True)
