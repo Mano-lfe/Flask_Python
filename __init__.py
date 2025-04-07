@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import json                                                                                                                                     
-app = Flask(_name_)
+app = Flask(__name__)
 
 @app.route('/<int:valeur>')
 def exercice(valeur):
@@ -18,5 +18,5 @@ def exercice(valeur):
 
     return ', '.join(count)  
 
-if _name_ == "_main_":
+if _name_ == "__main__":
     app.run(debug=True)
