@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/<int:valeur>')
    resultat = ''
     for i in range(1, valeur + 1):
-        # Espaces pour centrer
+    
         resultat += '&nbsp;' * (valeur - i)
         
       
